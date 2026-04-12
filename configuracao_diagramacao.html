@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prévia Técnica — Lapidar Base</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+background:#f2f2f2;
+margin:0;
+}
+
+header{
+background:#1a1a1a;
+color:white;
+padding:25px;
+text-align:center;
+font-size:24px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.loader{
+margin:40px auto;
+border:8px solid #eee;
+border-top:8px solid #004aad;
+border-radius:50%;
+width:60px;
+height:60px;
+animation:spin 1.5s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+button{
+width:100%;
+padding:16px;
+font-size:18px;
+background:#004aad;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+background:#00337a;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#666;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+Prévia Técnica do Manuscrito
+</header>
+
+<div class="container">
+<div class="card">
+
+<h2>Leitura estrutural em andamento</h2>
+
+<p>
+O sistema está analisando o manuscrito enviado.
+</p>
+
+<div class="loader"></div>
+
+<p>
+Preparando visualização técnica do documento…
+</p>
+
+<button onclick="location.href='configuracao_diagramacao.html'">
+Continuar para configuração da diagramação
+</button>
+
+</div>
+</div>
+
+<footer>
+Lapidar Base — Prévia técnica estrutural
+</footer>
+
+</body>
+</html>
