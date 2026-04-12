@@ -1,130 +1,114 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prévia Diagramada — Lapidar Base</title>
+// =======================================
+// LAPIDAR BASE — ENGINE DIAGRAMAÇÃO v1
+// =======================================
 
-<style>
 
-body{
-font-family: Arial, sans-serif;
-background:#f2f2f2;
-margin:0;
+// Estrutura de layout editorial
+
+const layoutEditorial = {
+
+formato: "A5",
+larguraPagina: 148,
+alturaPagina: 210,
+
+margemInterna: 25,
+margemExterna: 20,
+margemSuperior: 20,
+margemInferior: 25,
+
+fonte: "Times New Roman",
+tamanhoFonte: 12,
+entrelinha: 1.5,
+
+recuoParagrafo: 1.25
+
+};
+
+
+// =======================================
+// Aplicar configuração recebida do CORE
+// =======================================
+
+function aplicarConfiguracaoEditorial(config){
+
+if(config.formato) layoutEditorial.formato = config.formato;
+if(config.fonte) layoutEditorial.fonte = config.fonte;
+if(config.recuo) layoutEditorial.recuoParagrafo = config.recuo;
+
+console.log("Layout atualizado:", layoutEditorial);
+
 }
 
-header{
-background:#1a1a1a;
-color:white;
-padding:25px;
-text-align:center;
-font-size:24px;
+
+// =======================================
+// Simulação de paginação editorial
+// =======================================
+
+function calcularLinhasPorPagina(){
+
+const alturaUtil =
+layoutEditorial.alturaPagina -
+layoutEditorial.margemSuperior -
+layoutEditorial.margemInferior;
+
+const alturaLinha =
+layoutEditorial.tamanhoFonte *
+layoutEditorial.entrelinha;
+
+const linhas =
+Math.floor(alturaUtil / alturaLinha);
+
+return linhas;
+
 }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:30px;
+
+// =======================================
+// Simulação de caracteres por linha
+// =======================================
+
+function calcularCaracteresPorLinha(){
+
+const larguraUtil =
+layoutEditorial.larguraPagina -
+layoutEditorial.margemInterna -
+layoutEditorial.margemExterna;
+
+const larguraMediaCaractere =
+layoutEditorial.tamanhoFonte * 0.5;
+
+const caracteres =
+Math.floor(larguraUtil / larguraMediaCaractere);
+
+return caracteres;
+
 }
 
-.page{
-background:white;
-width:420px;
-height:595px;
-margin:20px auto;
-padding:40px;
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
-font-family: Georgia, serif;
-font-size:14px;
-line-height:1.6;
+
+// =======================================
+// Estimativa de páginas do manuscrito
+// =======================================
+
+function estimarPaginas(totalCaracteres){
+
+const caracteresPagina =
+calcularLinhasPorPagina() *
+calcularCaracteresPorLinha();
+
+const paginas =
+Math.ceil(totalCaracteres / caracteresPagina);
+
+return paginas;
+
 }
 
-.page h2{
-text-align:center;
+
+// =======================================
+// DEBUG
+// =======================================
+
+function statusLayout(){
+
+console.log("Layout atual:", layoutEditorial);
+
 }
-
-.buttons{
-max-width:420px;
-margin:auto;
-}
-
-button{
-width:100%;
-padding:16px;
-font-size:18px;
-background:#004aad;
-color:white;
-border:none;
-border-radius:8px;
-cursor:pointer;
-margin-top:20px;
-}
-
-button:hover{
-background:#00337a;
-}
-
-.back{
-background:#777;
-}
-
-.back:hover{
-background:#555;
-}
-
-footer{
-text-align:center;
-padding:20px;
-color:#666;
-font-size:14px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-Prévia Diagramada do Livro
-</header>
-
-<div class="container">
-
-<div class="page">
-
-<h2>Título do Capítulo</h2>
-
-<p>
-Aqui aparece a prévia do texto já diagramado com margens,
-tipografia e espaçamento editorial simulando o miolo real
-do livro.
-</p>
-
-<p>
-Esta tela representa a aparência final antes da geração
-do PDF de impressão.
-</p>
-
-</div>
-
-<div class="buttons">
-
-<button onclick="location.href='okapista_capas.html'">
-Seguir para criação da capa
-</button>
-
-<button class="back" onclick="location.href='configuracao_diagramacao.html'">
-Voltar para configuração
-</button>
-
-</div>
-
-</div>
-
-<footer>
-Lapidar Base — Prévia editorial do miolo
-</footer>
-
-</body>
-</html>
