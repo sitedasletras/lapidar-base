@@ -1,114 +1,44 @@
-// =======================================
-// LAPIDAR BASE — ENGINE DIAGRAMAÇÃO v1
-// =======================================
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prévia Diagramada — Lapidar Base</title>
+</head>
 
+<body>
 
-// Estrutura de layout editorial
+<h2>Prévia diagramada do miolo</h2>
 
-const layoutEditorial = {
+<p id="estimativa_paginas"></p>
 
-formato: "A5",
-larguraPagina: 148,
-alturaPagina: 210,
+<button onclick="location.href='okapista_capas.html'">
+Seguir para capa
+</button>
 
-margemInterna: 25,
-margemExterna: 20,
-margemSuperior: 20,
-margemInferior: 25,
+<script src="js/app.js"></script>
+<script src="js/engine_diagramacao.js"></script>
 
-fonte: "Times New Roman",
-tamanhoFonte: 12,
-entrelinha: 1.5,
+<script>
 
-recuoParagrafo: 1.25
+if(projeto.totalCaracteres){
 
-};
+const paginasEstimadas =
+estimarPaginas(projeto.totalCaracteres);
 
+document.getElementById("estimativa_paginas")
+.innerText =
+"Estimativa de páginas: " + paginasEstimadas;
 
-// =======================================
-// Aplicar configuração recebida do CORE
-// =======================================
+}else{
 
-function aplicarConfiguracaoEditorial(config){
-
-if(config.formato) layoutEditorial.formato = config.formato;
-if(config.fonte) layoutEditorial.fonte = config.fonte;
-if(config.recuo) layoutEditorial.recuoParagrafo = config.recuo;
-
-console.log("Layout atualizado:", layoutEditorial);
-
-}
-
-
-// =======================================
-// Simulação de paginação editorial
-// =======================================
-
-function calcularLinhasPorPagina(){
-
-const alturaUtil =
-layoutEditorial.alturaPagina -
-layoutEditorial.margemSuperior -
-layoutEditorial.margemInferior;
-
-const alturaLinha =
-layoutEditorial.tamanhoFonte *
-layoutEditorial.entrelinha;
-
-const linhas =
-Math.floor(alturaUtil / alturaLinha);
-
-return linhas;
+document.getElementById("estimativa_paginas")
+.innerText =
+"Estimativa de páginas indisponível.";
 
 }
 
+</script>
 
-// =======================================
-// Simulação de caracteres por linha
-// =======================================
-
-function calcularCaracteresPorLinha(){
-
-const larguraUtil =
-layoutEditorial.larguraPagina -
-layoutEditorial.margemInterna -
-layoutEditorial.margemExterna;
-
-const larguraMediaCaractere =
-layoutEditorial.tamanhoFonte * 0.5;
-
-const caracteres =
-Math.floor(larguraUtil / larguraMediaCaractere);
-
-return caracteres;
-
-}
-
-
-// =======================================
-// Estimativa de páginas do manuscrito
-// =======================================
-
-function estimarPaginas(totalCaracteres){
-
-const caracteresPagina =
-calcularLinhasPorPagina() *
-calcularCaracteresPorLinha();
-
-const paginas =
-Math.ceil(totalCaracteres / caracteresPagina);
-
-return paginas;
-
-}
-
-
-// =======================================
-// DEBUG
-// =======================================
-
-function statusLayout(){
-
-console.log("Layout atual:", layoutEditorial);
-
-}
+</body>
+</html>
