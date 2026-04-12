@@ -4,134 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Upload do Manuscrito — Lapidar Base</title>
-
-<style>
-
-body{
-font-family: Arial, sans-serif;
-background:#f4f4f4;
-margin:0;
-}
-
-header{
-background:#1a1a1a;
-color:white;
-padding:25px;
-text-align:center;
-font-size:24px;
-}
-
-.container{
-max-width:800px;
-margin:auto;
-padding:30px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 3px 8px rgba(0,0,0,0.1);
-}
-
-input[type=file]{
-margin-top:20px;
-margin-bottom:20px;
-font-size:16px;
-}
-
-button{
-width:100%;
-padding:16px;
-font-size:18px;
-background:#004aad;
-color:white;
-border:none;
-border-radius:8px;
-cursor:pointer;
-}
-
-button:hover{
-background:#00337a;
-}
-
-.back{
-margin-top:20px;
-background:#777;
-}
-
-.back:hover{
-background:#555;
-}
-
-footer{
-text-align:center;
-padding:20px;
-color:#666;
-font-size:14px;
-}
-
-</style>
-
 </head>
 
 <body>
 
-<header>
-Upload do Manuscrito
-</header>
-
-<div class="container">
-
-<div class="card">
-
 <h2>Selecionar arquivo</h2>
 
-<p>
-Envie seu manuscrito (DOCX, PDF ou TXT).
-</p>
+<input type="file" id="manuscrito" onchange="registrarUpload(this)">
 
-<input type="file" id="manuscrito">
-
-<button onclick="confirmarUpload()">
-Confirmar envio
+<button onclick="location.href='preview_tecnico.html'">
+Continuar
 </button>
 
-<button class="back" onclick="location.href='index.html'">
-Voltar ao início
-</button>
-
-</div>
-
-</div>
-
-<footer>
-
-Lapidar Base — Entrada do manuscrito editorial
-
-</footer>
-
-<script>
-
-function confirmarUpload(){
-
-let arquivo = document.getElementById("manuscrito").files.length;
-
-if(arquivo > 0){
-
-alert("Manuscrito carregado com sucesso.");
-
-window.location.href = "preview_tecnico.html";
-
-}else{
-
-alert("Selecione um arquivo antes de continuar.");
-
-}
-
-}
-
-</script>
+<script src="js/app.js"></script>
 
 </body>
 </html>
