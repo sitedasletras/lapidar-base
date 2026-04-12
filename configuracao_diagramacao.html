@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prévia Técnica — Lapidar Base</title>
+<title>Configuração da Diagramação — Lapidar Base</title>
 
 <style>
+
 body{
 font-family: Arial, sans-serif;
-background:#f2f2f2;
+background:#f3f3f3;
 margin:0;
 }
 
@@ -31,22 +32,22 @@ background:white;
 padding:30px;
 border-radius:12px;
 box-shadow:0 3px 8px rgba(0,0,0,0.1);
-text-align:center;
 }
 
-.loader{
-margin:40px auto;
-border:8px solid #eee;
-border-top:8px solid #004aad;
-border-radius:50%;
-width:60px;
-height:60px;
-animation:spin 1.5s linear infinite;
+label{
+display:block;
+margin-top:20px;
+margin-bottom:8px;
+font-weight:bold;
 }
 
-@keyframes spin{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
+select{
+width:100%;
+padding:14px;
+font-size:16px;
+border:1px solid #ccc;
+border-radius:8px;
+background:white;
 }
 
 button{
@@ -58,11 +59,20 @@ color:white;
 border:none;
 border-radius:8px;
 cursor:pointer;
-margin-top:20px;
+margin-top:25px;
 }
 
 button:hover{
 background:#00337a;
+}
+
+.back{
+background:#777;
+margin-top:15px;
+}
+
+.back:hover{
+background:#555;
 }
 
 footer{
@@ -71,39 +81,69 @@ padding:20px;
 color:#666;
 font-size:14px;
 }
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-Prévia Técnica do Manuscrito
+Configuração da Diagramação
 </header>
 
 <div class="container">
 <div class="card">
 
-<h2>Leitura estrutural em andamento</h2>
+<h2>Definir parâmetros do miolo</h2>
 
-<p>
-O sistema está analisando o manuscrito enviado.
-</p>
+<label>Formato do livro</label>
+<select>
+<option>A5</option>
+<option>16x23 cm</option>
+<option>A4</option>
+</select>
 
-<div class="loader"></div>
+<label>Fonte do corpo do texto</label>
+<select>
+<option>Times New Roman</option>
+<option>Arial</option>
+<option>Garamond</option>
+</select>
 
-<p>
-Preparando visualização técnica do documento…
-</p>
+<label>Margens</label>
+<select>
+<option>Espelhadas</option>
+<option>Simples</option>
+</select>
 
-<button onclick="location.href='configuracao_diagramacao.html'">
-Continuar para configuração da diagramação
+<label>Recuo de parágrafo</label>
+<select>
+<option>1,25 cm</option>
+<option>Sem recuo</option>
+</select>
+
+<label>Hifenização</label>
+<select>
+<option>Automática</option>
+<option>Desativada</option>
+</select>
+
+<button onclick="location.href='preview_diagramado.html'">
+Gerar prévia diagramada
+</button>
+
+<button class="back" onclick="location.href='preview_tecnico.html'">
+Voltar
 </button>
 
 </div>
 </div>
 
 <footer>
-Lapidar Base — Prévia técnica estrutural
+
+Lapidar Base — Configuração editorial do miolo
+
 </footer>
 
 </body>
