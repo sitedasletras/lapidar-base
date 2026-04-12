@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKapista — Criação de Capa</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f2f2f2;
+margin:0;
+}
+
+header{
+background:#1a1a1a;
+color:white;
+padding:25px;
+text-align:center;
+font-size:24px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+label{
+display:block;
+margin-top:20px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:8px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:16px;
+font-size:18px;
+background:#004aad;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin-top:25px;
+}
+
+button:hover{
+background:#00337a;
+}
+
+.back{
+background:#777;
+}
+
+.back:hover{
+background:#555;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#666;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+OKapista — Construção da Capa
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<label>Título do livro</label>
+<input type="text" placeholder="Digite o título">
+
+<label>Nome do autor</label>
+<input type="text" placeholder="Digite o nome do autor">
+
+<label>Subtítulo (opcional)</label>
+<input type="text" placeholder="Digite o subtítulo">
+
+<label>Texto da contracapa</label>
+<input type="text" placeholder="Digite o texto da contracapa">
+
+<button onclick="location.href='exportacao_final.html'">
+Gerar capa
+</button>
+
+<button class="back" onclick="location.href='preview_diagramado.html'">
+Voltar
+</button>
+
+</div>
+
+</div>
+
+<footer>
+Lapidar Base — OKapista (capa editorial)
+</footer>
+
+</body>
+</html>
