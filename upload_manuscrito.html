@@ -8,15 +8,64 @@
 
 <body>
 
-<h2>Selecionar arquivo</h2>
+<h2>Selecionar manuscrito</h2>
 
-<input type="file" id="manuscrito" onchange="registrarUpload(this)">
+<input type="file" id="manuscrito">
 
-<button onclick="location.href='preview_tecnico.html'">
+<button onclick="processarArquivo()">
 Continuar
 </button>
 
 <script src="js/app.js"></script>
+<script src="js/engine_diagramacao.js"></script>
+
+<script>
+
+function processarArquivo(){
+
+const input =
+document.getElementById("manuscrito");
+
+if(input.files.length === 0){
+
+alert("Selecione um arquivo");
+
+return;
+
+}
+
+const arquivo =
+input.files[0];
+
+projeto.arquivo = arquivo.name;
+
+const reader =
+new FileReader();
+
+reader.onload = function(event){
+
+const texto =
+event.target.result;
+
+const totalCaracteres =
+texto.length;
+
+projeto.totalCaracteres =
+totalCaracteres;
+
+console.log("Caracteres detectados:",
+totalCaracteres);
+
+window.location.href =
+"preview_tecnico.html";
+
+};
+
+reader.readAsText(arquivo);
+
+}
+
+</script>
 
 </body>
 </html>
