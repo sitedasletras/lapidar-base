@@ -3,20 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Preview Técnico</title>
+
+<title>Prévia diagramada do miolo</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Garamond, serif;
+background:#eaeaea;
+}
+
+.container{
+
+max-width:600px;
+margin:auto;
+padding:40px 30px;
+background:white;
+min-height:90vh;
+
+line-height:1.6;
+font-size:18px;
+text-align:justify;
+
+}
+
+h1{
+font-size:30px;
+margin-bottom:30px;
+}
+
+.botao{
+
+display:inline-block;
+margin-top:30px;
+
+padding:12px 20px;
+background:#0b3b82;
+color:white;
+text-decoration:none;
+
+}
+
+</style>
 </head>
 
 <body>
 
-<h2>Preview técnico do manuscrito</h2>
+<div class="container">
 
-<p>Arquivo carregado com sucesso.</p>
+<h1>Prévia diagramada do miolo</h1>
 
-<button onclick="location.href='configuracao_diagramacao.html'">
-Continuar
-</button>
+<div id="conteudo"></div>
 
-<script src="js/app.js"></script>
+<a class="botao" href="capa.html">
+Seguir para capa
+</a>
+
+</div>
+
+<script>
+
+const texto = localStorage.getItem("textoManuscrito");
+
+if(!texto || texto.trim()===""){
+
+document.getElementById("conteudo").innerHTML=
+"<p>Prévia indisponível para DOCX nesta etapa.</p>";
+
+}else{
+
+const paragrafos = texto.split(/\n+/);
+
+let html="";
+
+paragrafos.forEach(p=>{
+
+html+=`<p>${p}</p>`;
+
+});
+
+document.getElementById("conteudo").innerHTML=html;
+
+}
+
+</script>
 
 </body>
 </html>
