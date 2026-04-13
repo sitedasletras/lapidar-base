@@ -3,56 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exportação Final — Lapidar Base</title>
+<title>Exportação final</title>
+
+<script src="js/app.js"></script>
+
+<style>
+body{
+font-family: Arial;
+padding:40px;
+}
+button{
+display:block;
+margin:15px 0;
+padding:14px;
+font-size:18px;
+}
+</style>
 </head>
 
 <body>
 
-<h2>Exportação final</h2>
+<h1>Exportação final</h1>
 
-<button onclick="gerarPDFMioloReal()">
+<button onclick="gerarPDFMiolo()">
 Gerar PDF miolo
 </button>
 
-<br><br>
-
-<button onclick="gerarPDFCapaReal()">
+<button onclick="gerarPDFCapa()">
 Gerar PDF capa
 </button>
 
-<br><br>
-
-<button onclick="gerarPDFContraCapaReal()">
+<button onclick="gerarPDFContracapa()">
 Gerar PDF contracapa
 </button>
 
-<br><br>
-
-<button onclick="gerarPDFLombadaReal()">
+<button onclick="gerarPDFLombada()">
 Gerar PDF lombada
 </button>
 
-<br><br>
-
-<button onclick="gerarPDFOrelhaDianteira()">
+<button onclick="gerarOrelhaFrente()">
 Gerar orelha dianteira
 </button>
 
-<br><br>
-
-<button onclick="gerarPDFOrelhaTraseira()">
+<button onclick="gerarOrelhaTras()">
 Gerar orelha traseira
 </button>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
 
-<script src="js/app.js"></script>
-<script src="js/engine_diagramacao.js"></script>
-<script src="js/exportador_pdf.js"></script>
-<script src="js/exportador_capa.js"></script>
-<script src="js/exportador_contracapa.js"></script>
-<script src="js/exportador_lombada.js"></script>
-<script src="js/exportador_orelhas.js"></script>
+function gerarPDFCapa(){
+
+const titulo = localStorage.getItem("tituloLivro") || "Título"
+const autor = localStorage.getItem("autorLivro") || "Autor"
+
+const novaJanela = window.open("")
+
+novaJanela.document.write(`
+<h1 style="margin-top:40vh;text-align:center">
+${titulo}
+</h1>
+
+<p style="text-align:center;margin-top:40vh">
+${autor}
+</p>
+`)
+
+}
+
+</script>
 
 </body>
 </html>
