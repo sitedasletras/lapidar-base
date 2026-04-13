@@ -103,7 +103,7 @@ OKapista — Construção da Capa
 <label for="contracapa">Texto da contracapa</label>
 <input id="contracapa" type="text" placeholder="Digite o texto da contracapa">
 
-<button onclick="registrarCapa(); location.href='exportacao_final.html'">
+<button onclick="salvarCapaEContinuar()">
 Gerar capa
 </button>
 
@@ -118,7 +118,22 @@ Voltar
 Lapidar Base — OKapista (capa editorial)
 </footer>
 
-<script src="js/app.js"></script>
+<script>
+function salvarCapaEContinuar(){
+
+const titulo = document.getElementById("titulo").value.trim();
+const autor = document.getElementById("autor").value.trim();
+const subtitulo = document.getElementById("subtitulo").value.trim();
+const contracapa = document.getElementById("contracapa").value.trim();
+
+localStorage.setItem("tituloLivro", titulo);
+localStorage.setItem("autorLivro", autor);
+localStorage.setItem("subtituloLivro", subtitulo);
+localStorage.setItem("textoContracapa", contracapa);
+
+location.href = "exportacao_final.html";
+}
+</script>
 
 </body>
 </html>
