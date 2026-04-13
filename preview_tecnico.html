@@ -47,7 +47,7 @@ text-decoration:none;
 
 <div id="conteudo"></div>
 
-<a class="botao" href="okapista_capas.html">
+<a class="botao" href="capa.html">
 Seguir para capa
 </a>
 
@@ -60,14 +60,7 @@ if(!texto || texto.trim()===""){
 document.getElementById("conteudo").innerHTML =
 "<p>Prévia indisponível para DOCX nesta etapa.</p>";
 }else{
-const paragrafos = texto.split(/\n+/);
-let html = "";
-
-paragrafos.forEach(p=>{
-html += `<p>${p}</p>`;
-});
-
-document.getElementById("conteudo").innerHTML = html;
+document.getElementById("conteudo").innerHTML = texto;
 }
 </script>
 
