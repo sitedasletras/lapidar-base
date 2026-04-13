@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OKapista — Criação de Capa</title>
+<title>OKapista — Construção da Capa</title>
 
 <style>
-
 body{
 font-family: Arial, sans-serif;
 background:#f2f2f2;
@@ -47,6 +46,7 @@ margin-top:8px;
 border:1px solid #ccc;
 border-radius:8px;
 font-size:16px;
+box-sizing:border-box;
 }
 
 button{
@@ -79,9 +79,7 @@ padding:20px;
 color:#666;
 font-size:14px;
 }
-
 </style>
-
 </head>
 
 <body>
@@ -91,22 +89,21 @@ OKapista — Construção da Capa
 </header>
 
 <div class="container">
-
 <div class="card">
 
-<label>Título do livro</label>
-<input type="text" placeholder="Digite o título">
+<label for="titulo">Título do livro</label>
+<input id="titulo" type="text" placeholder="Digite o título">
 
-<label>Nome do autor</label>
-<input type="text" placeholder="Digite o nome do autor">
+<label for="autor">Nome do autor</label>
+<input id="autor" type="text" placeholder="Digite o nome do autor">
 
-<label>Subtítulo (opcional)</label>
-<input type="text" placeholder="Digite o subtítulo">
+<label for="subtitulo">Subtítulo (opcional)</label>
+<input id="subtitulo" type="text" placeholder="Digite o subtítulo">
 
-<label>Texto da contracapa</label>
-<input type="text" placeholder="Digite o texto da contracapa">
+<label for="contracapa">Texto da contracapa</label>
+<input id="contracapa" type="text" placeholder="Digite o texto da contracapa">
 
-<button onclick="location.href='exportacao_final.html'">
+<button onclick="registrarCapa(); location.href='exportacao_final.html'">
 Gerar capa
 </button>
 
@@ -115,12 +112,13 @@ Voltar
 </button>
 
 </div>
-
 </div>
 
 <footer>
 Lapidar Base — OKapista (capa editorial)
 </footer>
+
+<script src="js/app.js"></script>
 
 </body>
 </html>
