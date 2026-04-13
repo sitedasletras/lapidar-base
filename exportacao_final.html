@@ -7,64 +7,51 @@
 
 <style>
 body{
-font-family:Arial, sans-serif;
-padding:40px;
+font-family:Arial;
 background:#f2f2f2;
+margin:0;
+}
+
+.container{
+max-width:600px;
+margin:auto;
+background:white;
+padding:40px;
+min-height:90vh;
 }
 
 h1{
 margin-bottom:30px;
 }
 
-button{
+.botao{
 display:block;
-margin:15px 0;
-padding:14px 18px;
+margin-top:20px;
+padding:15px;
+background:#0b3b82;
+color:white;
+text-decoration:none;
+text-align:center;
 font-size:18px;
-cursor:pointer;
 }
 </style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
+
 <body>
+
+<div class="container">
 
 <h1>Exportação final</h1>
 
-<button onclick="gerarPDFCapa()">
-Gerar PDF capa
-</button>
+<p>Arquivos prontos para geração:</p>
+
+<a class="botao" onclick="gerarPDF()">Gerar PDF editorial</a>
+
+</div>
 
 <script>
-async function gerarPDFCapa(){
-
-const titulo = localStorage.getItem("tituloLivro") || "Título";
-const autor = localStorage.getItem("autorLivro") || "Autor";
-const subtitulo = localStorage.getItem("subtituloLivro") || "";
-
-const { jsPDF } = window.jspdf;
-
-const doc = new jsPDF({
-orientation: "portrait",
-unit: "mm",
-format: [148, 210]
-});
-
-doc.setFont("times", "bold");
-doc.setFontSize(22);
-doc.text(titulo, 74, 95, { align: "center" });
-
-if(subtitulo){
-doc.setFont("times", "normal");
-doc.setFontSize(14);
-doc.text(subtitulo, 74, 110, { align: "center" });
-}
-
-doc.setFont("times", "normal");
-doc.setFontSize(14);
-doc.text(autor, 74, 170, { align: "center" });
-
-doc.save("capa_lapidar_base.pdf");
+function gerarPDF(){
+alert("Exportador PDF entra na próxima etapa do Lapidar Base.");
 }
 </script>
 
