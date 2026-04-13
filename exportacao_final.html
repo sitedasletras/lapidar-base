@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Exportação final</title>
 
-<script src="js/app.js"></script>
-
 <style>
 body{
-font-family: Arial;
+font-family:Arial;
 padding:40px;
 }
 button{
@@ -19,44 +17,24 @@ padding:14px;
 font-size:18px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <h1>Exportação final</h1>
 
-<button onclick="gerarPDFMiolo()">
-Gerar PDF miolo
-</button>
-
 <button onclick="gerarPDFCapa()">
 Gerar PDF capa
-</button>
-
-<button onclick="gerarPDFContracapa()">
-Gerar PDF contracapa
-</button>
-
-<button onclick="gerarPDFLombada()">
-Gerar PDF lombada
-</button>
-
-<button onclick="gerarOrelhaFrente()">
-Gerar orelha dianteira
-</button>
-
-<button onclick="gerarOrelhaTras()">
-Gerar orelha traseira
 </button>
 
 <script>
 
 function gerarPDFCapa(){
 
-const titulo = localStorage.getItem("tituloLivro") || "Título"
-const autor = localStorage.getItem("autorLivro") || "Autor"
+const titulo = localStorage.getItem("tituloLivro");
+const autor = localStorage.getItem("autorLivro");
 
-const novaJanela = window.open("")
+const novaJanela = window.open("");
 
 novaJanela.document.write(`
 <h1 style="margin-top:40vh;text-align:center">
@@ -66,7 +44,7 @@ ${titulo}
 <p style="text-align:center;margin-top:40vh">
 ${autor}
 </p>
-`)
+`);
 
 }
 
