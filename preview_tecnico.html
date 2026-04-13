@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Prévia diagramada do miolo</title>
 
 <style>
-
 body{
 margin:0;
 font-family:Garamond, serif;
@@ -15,17 +13,14 @@ background:#eaeaea;
 }
 
 .container{
-
 max-width:600px;
 margin:auto;
 padding:40px 30px;
 background:white;
 min-height:90vh;
-
 line-height:1.6;
 font-size:18px;
 text-align:justify;
-
 }
 
 h1{
@@ -34,17 +29,13 @@ margin-bottom:30px;
 }
 
 .botao{
-
 display:inline-block;
 margin-top:30px;
-
 padding:12px 20px;
 background:#0b3b82;
 color:white;
 text-decoration:none;
-
 }
-
 </style>
 </head>
 
@@ -56,37 +47,28 @@ text-decoration:none;
 
 <div id="conteudo"></div>
 
-<a class="botao" href="capa.html">
+<a class="botao" href="okapista_capas.html">
 Seguir para capa
 </a>
 
 </div>
 
 <script>
-
 const texto = localStorage.getItem("textoManuscrito");
 
 if(!texto || texto.trim()===""){
-
-document.getElementById("conteudo").innerHTML=
+document.getElementById("conteudo").innerHTML =
 "<p>Prévia indisponível para DOCX nesta etapa.</p>";
-
 }else{
-
 const paragrafos = texto.split(/\n+/);
-
-let html="";
+let html = "";
 
 paragrafos.forEach(p=>{
-
-html+=`<p>${p}</p>`;
-
+html += `<p>${p}</p>`;
 });
 
-document.getElementById("conteudo").innerHTML=html;
-
+document.getElementById("conteudo").innerHTML = html;
 }
-
 </script>
 
 </body>
